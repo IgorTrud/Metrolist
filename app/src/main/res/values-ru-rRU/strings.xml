@@ -238,9 +238,9 @@
     <string name="content_language">Язык контента</string>
     <string name="content_country">Страна контента</string>
     <string name="system_default">По умолчанию системы</string>
-    <string name="enable_proxy">Включить прокси</string>
-    <string name="proxy_type">Тип прокси</string>
-    <string name="proxy_url">URL прокси</string>
+    <string name="proxy">Подключение</string>
+    <string name="enable_proxy">Альтернативный маршрут (для РФ)</string>
+    <string name="enable_proxy_auto">Автоматичсекий выбор маршрута</string>
     <string name="restart_to_take_effect">Перезапуск приложения</string>
 
     <string name="player_and_audio">Плеер и аудио</string>

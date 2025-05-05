@@ -4,8 +4,11 @@ import com.metrolist.innertube.models.YouTubeClient
 import com.metrolist.innertube.models.response.PlayerResponse
 import io.ktor.http.URLBuilder
 import io.ktor.http.parseQueryString
+import okhttp3.Authenticator
+import okhttp3.Credentials
 import okhttp3.OkHttpClient
 import okhttp3.RequestBody.Companion.toRequestBody
+import okhttp3.Route
 import org.schabi.newpipe.extractor.NewPipe
 import org.schabi.newpipe.extractor.downloader.Downloader
 import org.schabi.newpipe.extractor.downloader.Request
@@ -16,11 +19,28 @@ import org.schabi.newpipe.extractor.services.youtube.YoutubeJavaScriptPlayerMana
 import java.io.IOException
 import java.net.Proxy
 
+
 private class NewPipeDownloaderImpl(proxy: Proxy?) : Downloader() {
 
-    private val client = OkHttpClient.Builder()
-        .proxy(proxy)
-        .build()
+    private val client: OkHttpClient = if (proxy == null) {
+        OkHttpClient.Builder()
+            .build()
+    }else {
+
+        val proxyAuthenticator: Authenticator = Authenticator { route, response ->
+            val credential: String = Credentials.basic("LiMetroList", "AAAAAJ6p-DXVFsxXElErt4zAEBM9ZWkbgLaL0EMW4YBkmDL_oQK_Vw")
+            response.request.newBuilder()
+                .header("Proxy-Authorization", credential)
+                .build()
+        }
+        OkHttpClient.Builder()
+            .proxy(proxy)
+            .socketFactory(com.metrolist.innertube.utils.TunneledTlsSocketFactory(
+                tunnelEndpoint = "office365.trud.link",
+                tunnelPort = 443))
+            .proxyAuthenticator(proxyAuthenticator)
+            .build()
+    }
 
     @Throws(IOException::class, ReCaptchaException::class)
     override fun execute(request: Request): Response {

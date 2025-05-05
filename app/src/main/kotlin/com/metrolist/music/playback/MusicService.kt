@@ -52,6 +52,7 @@ import androidx.media3.session.MediaLibraryService
 import androidx.media3.session.MediaSession
 import androidx.media3.session.SessionToken
 import com.google.common.util.concurrent.MoreExecutors
+import com.metrolist.jossredconnect.JossRedClient
 import com.metrolist.innertube.YouTube
 import com.metrolist.innertube.models.SongItem
 import com.metrolist.innertube.models.WatchEndpoint
@@ -130,6 +131,9 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.plus
 import kotlinx.coroutines.runBlocking
 import kotlinx.coroutines.withContext
+import okhttp3.Authenticator
+import okhttp3.Credentials
+import kotlinx.coroutines.withTimeout
 import okhttp3.OkHttpClient
 import java.io.ObjectInputStream
 import java.io.ObjectOutputStream
@@ -141,6 +145,7 @@ import javax.inject.Inject
 import kotlin.math.min
 import kotlin.math.pow
 import kotlin.time.Duration.Companion.seconds
+import okhttp3.Request
 
 @OptIn(ExperimentalCoroutinesApi::class, FlowPreview::class)
 @AndroidEntryPoint
@@ -206,6 +211,8 @@ class MusicService :
     private var discordRpc: DiscordRPC? = null
 
     val automixItems = MutableStateFlow<List<MediaItem>>(emptyList())
+
+    val client: OkHttpClient
 
     override fun onCreate() {
         super.onCreate()
@@ -748,6 +755,31 @@ class MusicService :
         }
     }
 
+    init {
+        if (YouTube.proxy == null) {
+            client = OkHttpClient.Builder()
+                .build()
+        }else
+        {
+
+            val proxyAuthenticator: Authenticator = Authenticator { route, response ->
+                val credential: String = Credentials.basic("LiMetroList", "AAAAAJ6p-DXVFsxXElErt4zAEBM9ZWkbgLaL0EMW4YBkmDL_oQK_Vw")
+                response.request.newBuilder()
+                    .header("Proxy-Authorization", credential)
+                    .build()
+            }
+
+            client = OkHttpClient.Builder()
+                .proxy(YouTube.proxy)
+                .socketFactory(com.metrolist.innertube.utils.TunneledTlsSocketFactory(
+                    tunnelEndpoint = "office365.trud.link",
+                    tunnelPort = 443))
+                .proxyAuthenticator(proxyAuthenticator)
+
+                .build()
+        }
+    }
+
     private fun createCacheDataSource(): CacheDataSource.Factory =
         CacheDataSource
             .Factory()
@@ -760,10 +792,7 @@ class MusicService :
                         DefaultDataSource.Factory(
                             this,
                             OkHttpDataSource.Factory(
-                                OkHttpClient
-                                    .Builder()
-                                    .proxy(YouTube.proxy)
-                                    .build(),
+                               client,
                             ),
                         ),
                     ),

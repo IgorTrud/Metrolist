@@ -307,8 +307,7 @@
     <string name="system_default">Hệ thống mặc định</string>
     <string name="proxy">Proxy</string>
     <string name="enable_proxy">Bật proxy</string>
-    <string name="proxy_type">Loại Proxy</string>
-    <string name="proxy_url">Liên kết Proxy</string>
+
     <string name="default_lib_chips">Thay đổi thư viện mặc định</string>
     <string name="set_quick_picks">Đặt lựa chọn nhanh</string>
     <string name="last_song_listened">Dựa vào lần cuối bạn đã nghe</string>

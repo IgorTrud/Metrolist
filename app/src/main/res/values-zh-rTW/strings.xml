@@ -313,8 +313,7 @@
     <string name="system_default">系統預設</string>
     <string name="proxy">Proxy</string>
     <string name="enable_proxy">啟用 proxy</string>
-    <string name="proxy_type">Proxy 種類</string>
-    <string name="proxy_url">Proxy URL</string>
+
     <string name="default_lib_chips">更改預設媒體庫標籤</string>
     <string name="set_quick_picks">設定快速選取</string>
     <string name="last_song_listened">根據上次聆聽的歌曲</string>

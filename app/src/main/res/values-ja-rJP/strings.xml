@@ -212,8 +212,7 @@
     <string name="content_country">コンテンツの既定の国</string>
     <string name="system_default">システムに従う</string>
     <string name="enable_proxy">プロキシを有効化</string>
-    <string name="proxy_type">プロキシのタイプ</string>
-    <string name="proxy_url">プロキシのURL</string>
+
     <string name="restart_to_take_effect">再起動して反映</string>
 
     <string name="player_and_audio">プレイヤーと音声</string>

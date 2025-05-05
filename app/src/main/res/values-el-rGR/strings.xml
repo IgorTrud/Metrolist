@@ -308,8 +308,6 @@
     <string name="system_default">Προεπιλογή συστήματος</string>
     <string name="proxy">Διακομιστής μεσολάβησης</string>
     <string name="enable_proxy">Ενεργοποίηση διακομιστή μεσολάβησης</string>
-    <string name="proxy_type">Τύπος διακομιστή μεσολάβησης</string>
-    <string name="proxy_url">URL διακομηστή μεσολάβησης</string>
     <string name="default_lib_chips">Αλλαγή προεπιλεγμένου τσιπ βιβλιοθήκης</string>
     <string name="set_quick_picks">Ορισμός γρήγορων επιλογών</string>
     <string name="last_song_listened">Με βάση στο τελευταίο τραγούδι που ακούστηκε</string>

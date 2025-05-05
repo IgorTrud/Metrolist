@@ -208,8 +208,7 @@
     <string name="content_country">Negara konten bawaan</string>
     <string name="system_default">Default sistem</string>
     <string name="enable_proxy">Aktifkan proxy</string>
-    <string name="proxy_type">Tipe proxy</string>
-    <string name="proxy_url">URL proxy</string>
+
     <string name="restart_to_take_effect">Mulai ulang agar berlaku</string>
 
     <string name="player_and_audio">Pemutar dan audio</string>

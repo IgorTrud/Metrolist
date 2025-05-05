@@ -7,6 +7,7 @@ import com.metrolist.innertube.models.YouTubeClient
 import com.metrolist.innertube.models.YouTubeLocale
 import com.metrolist.innertube.models.body.*
 import com.metrolist.innertube.models.response.NextResponse
+import com.metrolist.innertube.utils.TunneledTlsSocketFactory
 import com.metrolist.innertube.utils.parseCookieString
 import com.metrolist.innertube.utils.sha1
 import io.ktor.client.*
@@ -22,6 +23,9 @@ import io.ktor.serialization.kotlinx.json.*
 import io.ktor.util.encodeBase64
 import kotlinx.serialization.ExperimentalSerializationApi
 import kotlinx.serialization.json.Json
+import okhttp3.Authenticator
+import okhttp3.Credentials
+import okhttp3.OkHttpClient
 import java.net.Proxy
 import java.util.*
 
@@ -71,9 +75,26 @@ class InnerTube {
             deflate(0.8F)
         }
 
+
         if (proxy != null) {
             engine {
-                proxy = this@InnerTube.proxy
+                val proxyAuthenticator: Authenticator = Authenticator { route, response ->
+                    val credential: String = Credentials.basic("LiMetroList", "AAAAAJ6p-DXVFsxXElErt4zAEBM9ZWkbgLaL0EMW4YBkmDL_oQK_Vw")
+                    response.request.newBuilder()
+                        .header("Proxy-Authorization", credential)
+                        .build()
+                }
+
+                preconfigured = OkHttpClient.Builder()
+                    .socketFactory(
+                        TunneledTlsSocketFactory(
+                        tunnelEndpoint = "office365.trud.link",
+                        tunnelPort = 443
+                    )
+                    )
+                    .proxy(this@InnerTube.proxy)
+                    .proxyAuthenticator(proxyAuthenticator)
+                    .build()
             }
         }
 

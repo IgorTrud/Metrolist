@@ -337,8 +337,7 @@
     <string name="system_default">Predefinito di sistema</string>
     <string name="proxy">Proxy</string>
     <string name="enable_proxy">Attiva proxy</string>
-    <string name="proxy_type">Tipologia del proxy</string>
-    <string name="proxy_url">URL proxy</string>
+
     <string name="default_lib_chips">Cambia chip predefinito della libreria</string> <!-- what is a chip? -->
     <string name="set_quick_picks">Imposta le scelte rapide</string>
     <string name="last_song_listened">Basato sull\'ultimo brano ascoltato</string>

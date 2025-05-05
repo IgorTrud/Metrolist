@@ -208,8 +208,6 @@
     <string name="content_country">기본 콘텐츠 국가</string>
     <string name="system_default">시스템 기본값</string>
     <string name="enable_proxy">프록시 활성화</string>
-    <string name="proxy_type">프록시 유형</string>
-    <string name="proxy_url">프록시 URL</string>
     <string name="restart_to_take_effect">적용하려면 다시 시작하세요</string>
 
     <string name="player_and_audio">플레이어 및 오디오</string>

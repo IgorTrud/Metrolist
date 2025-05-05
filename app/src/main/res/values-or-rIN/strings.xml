@@ -217,8 +217,7 @@
     <string name="content_country">ଡିଫଲ୍ଟ ବିଷୟବସ୍ତୁ ଦେଶ</string>
     <string name="system_default">ସିଷ୍ଟମ୍ ଡିଫଲ୍ଟ</string>
     <string name="enable_proxy">ପ୍ରକ୍ସି ସକ୍ଷମ କରନ୍ତୁ</string>
-    <string name="proxy_type">ପ୍ରକ୍ସି ପ୍ରକାର</string>
-    <string name="proxy_url">ପ୍ରକ୍ସି URL</string>
+
     <string name="restart_to_take_effect">କାର୍ଯ୍ୟକାରୀ ହେବାକୁ ପୁନଃ ଆରମ୍ଭ କରନ୍ତୁ</string>
 
     <string name="player_and_audio">ପ୍ଲେୟାର ଏବଂ ଅଡିଓ</string>

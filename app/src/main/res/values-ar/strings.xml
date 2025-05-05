@@ -386,8 +386,6 @@
     <string name="system_default">إعدادات النظام الافتراضية</string>
     <string name="proxy">الوكيل</string>
     <string name="enable_proxy">تفعيل الوكيل</string>
-    <string name="proxy_type">نوع الوكيل</string>
-    <string name="proxy_url">عنوان URL للوكيل</string>
     <string name="default_lib_chips">تغيير الشريحة الافتراضية للمكتبة</string>
     <string name="set_quick_picks">ضبط الاختيارات السريعة</string>
     <string name="last_song_listened">بناءً على آخر أغنية تم الاستماع إليها</string>

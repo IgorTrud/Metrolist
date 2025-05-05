@@ -217,8 +217,7 @@
     <string name="content_country">Standaard inhoudsland</string>
     <string name="system_default">Systeemstandaard</string>
     <string name="enable_proxy">Proxy inschakelen</string>
-    <string name="proxy_type">Proxy type</string>
-    <string name="proxy_url">Proxy URL</string>
+
     <string name="restart_to_take_effect">Herstart om effect te hebben</string>
 
     <string name="player_and_audio">Speler en geluid</string>

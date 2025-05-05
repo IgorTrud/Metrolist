@@ -217,8 +217,7 @@
     <string name="content_country">A tartalom alapért. országa</string>
     <string name="system_default">Rendszer alapérték</string>
     <string name="enable_proxy">Proxy bekapcsolása</string>
-    <string name="proxy_type">Proxy típusa</string>
-    <string name="proxy_url">Proxy URL</string>
+
     <string name="restart_to_take_effect">Indítsa újra, hogy életbe lépjen</string>
 
     <string name="player_and_audio">Lejátszó és hang</string>

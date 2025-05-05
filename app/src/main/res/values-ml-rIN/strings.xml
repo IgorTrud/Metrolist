@@ -217,8 +217,7 @@
     <string name="content_country">സ്ഥിര കന്റെന്റ് രാജ്യം</string>
     <string name="system_default">സിസ്റ്റം സ്ഥിരസ്ഥിതി</string>
     <string name="enable_proxy">പ്രോക്സി പ്രവർത്തനക്ഷമമാക്കുക</string>
-    <string name="proxy_type">പ്രോക്സി തരം</string>
-    <string name="proxy_url">പ്രോക്സി URL</string>
+
     <string name="restart_to_take_effect">പ്രാബല്യത്തിൽ വരാൻ പുനരാരംഭിക്കുക</string>
 
     <string name="player_and_audio">പ്ലെയറും ഓഡിയോയും</string>

@@ -54,16 +54,31 @@ class App : Application(), ImageLoaderFactory {
             KuGou.useTraditionalChinese = true
         }
 
+        if (dataStore[ProxyEnabledKeyAuto] == true) {
+            if (languageTag == "ru-RU") {
+                runBlocking {
+                    dataStore.edit { preferences -> preferences[ProxyEnabledKey] = true }
+                }
+            }else {
+                runBlocking {
+                    dataStore.edit { preferences -> preferences[ProxyEnabledKey] = false }
+                }
+            }
+        }
+
+
         if (dataStore[ProxyEnabledKey] == true) {
             try {
                 YouTube.proxy = Proxy(
                     dataStore[ProxyTypeKey].toEnum(defaultValue = Proxy.Type.HTTP),
-                    dataStore[ProxyUrlKey]!!.toInetSocketAddress()
+                    "127.0.0.1:65000".toInetSocketAddress()
                 )
             } catch (e: Exception) {
                 Toast.makeText(this, "Failed to parse proxy url.", LENGTH_SHORT).show()
                 reportException(e)
             }
+        }else {
+            YouTube.proxy = null
         }
 
         if (dataStore[UseLoginForBrowse] != false) {

@@ -217,8 +217,6 @@
     <string name="content_country">کشور پیش‌فرض محتوا</string>
     <string name="system_default">پیش فرض سیستم</string>
     <string name="enable_proxy">فعال‌کردن پروکسی</string>
-    <string name="proxy_type">نوع پروکسی</string>
-    <string name="proxy_url">آدرس‌اینترنتی پروکسی</string>
     <string name="restart_to_take_effect">راه‌اندازی‌مجدد برای اعمال اثر</string>
 
     <string name="player_and_audio">پخش‌کننده و صدا</string>

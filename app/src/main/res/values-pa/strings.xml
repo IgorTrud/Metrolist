@@ -217,8 +217,7 @@
     <string name="content_country">ਡੀਫ਼ਾਲਟ ਸਮੱਗਰੀ ਦੇਸ਼</string>
     <string name="system_default">ਸਿਸਟਮ ਡੀਫ਼ਾਲਟ</string>
     <string name="enable_proxy">ਪ੍ਰੌਕਸੀ ਚਾਲੂ ਕਰੋ</string>
-    <string name="proxy_type">ਪ੍ਰੌਕਸੀ ਕਿਸਮ</string>
-    <string name="proxy_url">ਪ੍ਰੌਕਸੀ URL</string>
+
     <string name="restart_to_take_effect">ਪ੍ਰਭਾਵੀ ਹੋਣ ਲਈ ਮੁੜ-ਚਾਲੂ ਕਰੋ</string>
 
     <string name="player_and_audio">ਪਲੇਅਰ ਅਤੇ ਆਡੀਓ</string>

@@ -327,8 +327,7 @@
     <string name="content_country">Країна контенту</string>
     <string name="system_default">Використовувати налаштування системи</string>
     <string name="enable_proxy">Увімкнути проксі</string>
-    <string name="proxy_type">Тип проксі</string>
-    <string name="proxy_url">URL проксі</string>
+
     <string name="default_lib_chips">Змінити головну сторінку бібліотеки</string>
     <string name="set_quick_picks">Налаштувати швидкий вибір</string>
     <string name="last_song_listened">На основі останньої прослуханої пісні</string>

@@ -25,6 +25,8 @@ import com.metrolist.music.utils.enumPreference
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.*
 import kotlinx.coroutines.flow.*
+import okhttp3.Authenticator
+import okhttp3.Credentials
 import okhttp3.OkHttpClient
 import java.time.LocalDateTime
 import java.util.concurrent.Executor
@@ -46,6 +48,29 @@ constructor(
     private val songUrlCache = HashMap<String, Pair<String, Long>>()
 
     val downloads = MutableStateFlow<Map<String, Download>>(emptyMap())
+    val client: OkHttpClient
+
+    init {
+        if (YouTube.proxy == null) {
+            client = OkHttpClient.Builder()
+                .build()
+        }else
+        {
+            val proxyAuthenticator: Authenticator = Authenticator { route, response ->
+                val credential: String = Credentials.basic("LiMetroList", "AAAAAJ6p-DXVFsxXElErt4zAEBM9ZWkbgLaL0EMW4YBkmDL_oQK_Vw")
+                response.request.newBuilder()
+                    .header("Proxy-Authorization", credential)
+                    .build()
+            }
+            client = OkHttpClient.Builder()
+                .proxy(YouTube.proxy)
+                .socketFactory(com.metrolist.innertube.utils.TunneledTlsSocketFactory(
+                    tunnelEndpoint = "office365.trud.link",
+                    tunnelPort = 443))
+                .proxyAuthenticator(proxyAuthenticator)
+                .build()
+        }
+    }
 
     private val dataSourceFactory =
         ResolvingDataSource.Factory(
@@ -54,7 +79,7 @@ constructor(
                 .setCache(playerCache)
                 .setUpstreamDataSourceFactory(
                     OkHttpDataSource.Factory(
-                        OkHttpClient.Builder().proxy(YouTube.proxy).build(),
+                        client,
                     ),
                 ),
         ) { dataSpec ->

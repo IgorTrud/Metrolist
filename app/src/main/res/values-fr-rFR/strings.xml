@@ -243,8 +243,6 @@
     <string name="system_default">Système par défaut</string>
     <string name="proxy">Proxy</string>
     <string name="enable_proxy">Activer un proxy</string>
-    <string name="proxy_type">Type de proxy</string>
-    <string name="proxy_url">URL du proxy</string>
     <string name="default_lib_chips">Choix de la bibliothèque par défaut</string>
     <string name="set_quick_picks">Choix des sélections rapides</string>
     <string name="last_song_listened">Basé sur la dernière chanson écoutée</string>

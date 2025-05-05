@@ -278,8 +278,6 @@
     <string name="system_default">Systemstandard</string>
     <string name="proxy">Proxy</string>
     <string name="enable_proxy">Proxy aktivieren</string>
-    <string name="proxy_type">Proxy-Typ</string>
-    <string name="proxy_url">Proxy-URL</string>
     <string name="default_lib_chips">Standard-Mediatheksauswahl ändern</string>
     <string name="set_quick_picks">Schnellauswahl festlegen</string>
     <string name="last_song_listened">Basierend auf dem zuletzt gehörten Song</string>

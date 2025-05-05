@@ -217,8 +217,6 @@
     <string name="content_country">ডিফল্ট কনটেন্ট দেশ</string>
     <string name="system_default">সিস্টেমের ডিফল্ট</string>
     <string name="enable_proxy">প্রক্সি সক্রিয় করুন</string>
-    <string name="proxy_type">প্রক্সি ধরণ</string>
-    <string name="proxy_url">প্রক্সি URL</string>
     <string name="restart_to_take_effect">পরিবর্তনগুলি প্রয়োগ করতে অ্যাপটি পুনরায় চালু করুন</string>
 
     <string name="player_and_audio">প্লেয়ার এবং অডিও</string>

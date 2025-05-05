@@ -56,8 +56,9 @@ fun ContentSettings(
     val (selectedLanguage, setSelectedLanguage) = rememberPreference(stringPreferencesKey("app_language"), "en")
     val (hideExplicit, onHideExplicitChange) = rememberPreference(key = HideExplicitKey, defaultValue = false)
     val (proxyEnabled, onProxyEnabledChange) = rememberPreference(key = ProxyEnabledKey, defaultValue = false)
-    val (proxyType, onProxyTypeChange) = rememberEnumPreference(key = ProxyTypeKey, defaultValue = Proxy.Type.HTTP)
-    val (proxyUrl, onProxyUrlChange) = rememberPreference(key = ProxyUrlKey, defaultValue = "host:port")
+    val (proxyEnabledAuto, onProxyEnabledChangeAuto) = rememberPreference(key = ProxyEnabledKeyAuto, defaultValue = true)
+    //val (proxyType, onProxyTypeChange) = rememberEnumPreference(key = ProxyTypeKey, defaultValue = Proxy.Type.HTTP)
+    //val (proxyUrl, onProxyUrlChange) = rememberPreference(key = ProxyUrlKey, defaultValue = "127.0.0.1:65000")
     val (enableKugou, onEnableKugouChange) = rememberPreference(key = EnableKugouKey, defaultValue = true)
     val (enableLrclib, onEnableLrclibChange) = rememberPreference(key = EnableLrcLibKey, defaultValue = true)
     val (preferredProvider, onPreferredProviderChange) =
@@ -152,13 +153,21 @@ fun ContentSettings(
         )
 
         PreferenceGroupTitle(title = stringResource(R.string.proxy))
+
+        SwitchPreference(
+            title = { Text(stringResource(R.string.enable_proxy_auto)) },
+            icon = { Icon(painterResource(R.drawable.media3_icon_feed), null) },
+            checked = proxyEnabledAuto,
+            onCheckedChange = onProxyEnabledChangeAuto,
+        )
+
         SwitchPreference(
             title = { Text(stringResource(R.string.enable_proxy)) },
             icon = { Icon(painterResource(R.drawable.wifi_proxy), null) },
             checked = proxyEnabled,
             onCheckedChange = onProxyEnabledChange,
         )
-        if (proxyEnabled) {
+       /* if (proxyEnabled) {
             Column {
                 ListPreference(
                     title = { Text(stringResource(R.string.proxy_type)) },
@@ -174,7 +183,7 @@ fun ContentSettings(
                 )
             }
         }
-
+*/
         PreferenceGroupTitle(title = stringResource(R.string.lyrics))
         SwitchPreference(
             title = { Text(stringResource(R.string.enable_lrclib)) },
