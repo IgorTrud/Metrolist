@@ -110,6 +110,7 @@ import com.metrolist.music.utils.get
 import com.metrolist.music.utils.isInternetAvailable
 import com.metrolist.music.utils.reportException
 import dagger.hilt.android.AndroidEntryPoint
+import io.ktor.http.parametersOf
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -131,6 +132,8 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.plus
 import kotlinx.coroutines.runBlocking
 import kotlinx.coroutines.withContext
+import okhttp3.Authenticator
+import okhttp3.Credentials
 import okhttp3.Authenticator
 import okhttp3.Credentials
 import kotlinx.coroutines.withTimeout

@@ -306,8 +306,7 @@
     <string name="system_default">Sistem varsayılanı</string>
     <string name="proxy">Proxy</string>
     <string name="enable_proxy">Proxy\'i etkinleştir</string>
-    <string name="proxy_type">Proxy türü</string>
-    <string name="proxy_url">Proxy URL\'si</string>
+
     <string name="default_lib_chips">Varsayılan kütüphane çipini değiştir</string>
     <string name="set_quick_picks">Hızlı Seçimleri Ayarla</string>
     <string name="last_song_listened">Son dinlenen şarkıya göre</string>
