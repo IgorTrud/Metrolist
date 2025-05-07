@@ -10,11 +10,9 @@ import com.metrolist.innertube.models.YouTubeClient.Companion.IOS
 import com.metrolist.innertube.models.YouTubeClient.Companion.TVHTML5_SIMPLY_EMBEDDED_PLAYER
 import com.metrolist.innertube.models.YouTubeClient.Companion.WEB_REMIX
 import com.metrolist.innertube.models.response.PlayerResponse
-import com.metrolist.music.constants.AudioQuality
 import okhttp3.Authenticator
 import okhttp3.Credentials
-import okhttp3.Authenticator
-import okhttp3.Credentials
+
 import com.metrolist.innertube.models.YouTubeClient.Companion.ANDROID_VR_NO_AUTH
 import com.metrolist.innertube.models.YouTubeClient.Companion.MOBILE
 import com.metrolist.innertube.models.YouTubeClient.Companion.WEB
@@ -45,32 +43,10 @@ object YTPlayerUtils {
             .build()
     }
 
-    private val httpClient =  if (YouTube.proxy == null) {
-        OkHttpClient.Builder()
-            .build()
-    }else {
-
-        val proxyAuthenticator: Authenticator = Authenticator { route, response ->
-            val credential: String = Credentials.basic("LiMetroList", "AAAAAJ6p-DXVFsxXElErt4zAEBM9ZWkbgLaL0EMW4YBkmDL_oQK_Vw")
-            response.request.newBuilder()
-                .header("Proxy-Authorization", credential)
-                .build()
-        }
-
-        OkHttpClient.Builder()
-            .proxy(YouTube.proxy)
-            .socketFactory(com.metrolist.innertube.utils.TunneledTlsSocketFactory(
-                tunnelEndpoint = "office365.trud.link",
-                tunnelPort = 443))
-            .proxyAuthenticator(proxyAuthenticator)
-            .build()
-    }
 
     private const val logTag = "YTPlayerUtils"
 
-    private val httpClient = OkHttpClient.Builder()
-        .proxy(YouTube.proxy)
-        .build()
+
     /**
      * The main client is used for metadata and initial streams.
      * Do not use other clients for this because it can result in inconsistent metadata.
