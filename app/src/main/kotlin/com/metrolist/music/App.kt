@@ -61,7 +61,7 @@ class App : Application(), ImageLoaderFactory {
                 }
             }else {
                 runBlocking {
-                    dataStore.edit { preferences -> preferences[ProxyEnabledKey] = false }
+                   // dataStore.edit { preferences -> preferences[ProxyEnabledKey] = false }
                 }
             }
         }
